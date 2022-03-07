@@ -7,6 +7,7 @@ All URIs are relative to *https://cryptkeeper.sb.forusall.com*
 | [**api_v1_participants_participant_id_accounts_account_id_balance_get**](DefaultApi.md#api_v1_participants_participant_id_accounts_account_id_balance_get) | **GET** /api/v1/participants/{participant_id}/accounts/{account_id}/balance |  |
 | [**api_v1_participants_participant_id_accounts_account_id_transactions_get**](DefaultApi.md#api_v1_participants_participant_id_accounts_account_id_transactions_get) | **GET** /api/v1/participants/{participant_id}/accounts/{account_id}/transactions |  |
 | [**api_v1_participants_participant_id_accounts_account_id_transactions_post**](DefaultApi.md#api_v1_participants_participant_id_accounts_account_id_transactions_post) | **POST** /api/v1/participants/{participant_id}/accounts/{account_id}/transactions |  |
+| [**api_v1_participants_participant_id_accounts_get**](DefaultApi.md#api_v1_participants_participant_id_accounts_get) | **GET** /api/v1/participants/{participant_id}/accounts |  |
 | [**api_v1_participants_participant_id_orders_get**](DefaultApi.md#api_v1_participants_participant_id_orders_get) | **GET** /api/v1/participants/{participant_id}/orders |  |
 | [**api_v1_participants_participant_id_orders_id_get**](DefaultApi.md#api_v1_participants_participant_id_orders_id_get) | **GET** /api/v1/participants/{participant_id}/orders/{id} |  |
 | [**api_v1_participants_participant_id_orders_post**](DefaultApi.md#api_v1_participants_participant_id_orders_post) | **POST** /api/v1/participants/{participant_id}/orders |  |
@@ -196,6 +197,68 @@ end
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## api_v1_participants_participant_id_accounts_get
+
+> Array&lt;Object&gt; api_v1_participants_participant_id_accounts_get(participant_id)
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'cryptkeeper-api-client'
+
+api_instance = CryptkeeperApiClient::DefaultApi.new
+participant_id = 'participant_id_example' # String | 
+
+begin
+  
+  result = api_instance.api_v1_participants_participant_id_accounts_get(participant_id)
+  p result
+rescue CryptkeeperApiClient::ApiError => e
+  puts "Error when calling DefaultApi->api_v1_participants_participant_id_accounts_get: #{e}"
+end
+```
+
+#### Using the api_v1_participants_participant_id_accounts_get_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(Array&lt;Object&gt;, Integer, Hash)> api_v1_participants_participant_id_accounts_get_with_http_info(participant_id)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.api_v1_participants_participant_id_accounts_get_with_http_info(participant_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => Array&lt;Object&gt;
+rescue CryptkeeperApiClient::ApiError => e
+  puts "Error when calling DefaultApi->api_v1_participants_participant_id_accounts_get_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **participant_id** | **String** |  |  |
+
+### Return type
+
+**Array&lt;Object&gt;**
 
 ### Authorization
 

@@ -154,8 +154,8 @@ module CryptkeeperApiClient
     # @param [Hash] opts the optional parameters
     # @return [Object]
     def api_v1_participants_participant_id_accounts_account_id_transactions_post(participant_id, account_id, opts = {})
-      data, _status_code, _headers = api_v1_participants_participant_id_accounts_account_id_transactions_post_with_http_info(participant_id, account_id, opts)
-      data
+      data, status_code, headers = api_v1_participants_participant_id_accounts_account_id_transactions_post_with_http_info(participant_id, account_id, opts)
+      return data, status_code, headers
     end
 
     # @param participant_id [String] 

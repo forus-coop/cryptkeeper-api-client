@@ -620,5 +620,62 @@ module CryptkeeperApiClient
       end
       return data, status_code, headers
     end
+
+    # @param [Hash] email_notification  parameters
+    # @return [Object]
+    def api_v1_notifications_send_email_post(email_notification, opts = {})
+      data, _status_code, _headers = api_v1_notifications_send_email_post_with_http_info(email_notification, opts)
+      data
+    end
+
+    # @param [Hash] email_notification parameters
+    # @return {} response status code and response headers
+    def api_v1_notifications_send_email_post_with_http_info(email_notification, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.api_v1__notifications_send_email_post ...'
+      end
+      # verify the required parameter 'email_notification' is set
+      if @api_client.config.client_side_validation && email_notification.nil?
+        fail ArgumentError, "Missing the required parameter 'email_notification' when calling DefaultApi.api_v1__notifications_send_email_post"
+      end
+      # resource path
+      local_var_path = '/api/v1/notifications/send_email'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+
+      # form parameters
+      form_params = opts[:form_params]
+
+      # http body (model)
+      post_body = {email_notification: email_notification}
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Object'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.api_v1_notifications_send_email_post",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#api_v1_notifications_send_email_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
   end
 end
